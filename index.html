@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Studenti - Istituto Manzoni</title>
+  <style>
+    :root {
+      --main-color: #2e86de;
+      --secondary-color: #f4f4f4;
+      --text-color: #333;
+      --font: 'Segoe UI', sans-serif;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background-color: var(--secondary-color);
+      color: var(--text-color);
+    }
+    header {
+      background-color: var(--main-color);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #1e5fad;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #cce0ff;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section {
+      display: none;
+    }
+    .active {
+      display: block;
+    }
+    footer {
+      background-color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: var(--main-color);
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #1b4f9c;
+    }
+    .card {
+      background: white;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>App Studenti - Istituto Manzoni</h1>
+    <p>Resta aggiornato con tutte le novità scolastiche!</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('chiSiamo')">Chi siamo</a>
+    <a href="#" onclick="showSection('calendario')">Calendario</a>
+    <a href="#" onclick="showSection('notizie')">Notizie</a>
+    <a href="#" onclick="showSection('orario')">Orario</a>
+    <a href="#" onclick="showSection('materiali')">Materiali</a>
+    <a href="#" onclick="showSection('eventi')">Eventi</a>
+    
+    <a href="#" onclick="showSection('segnalazioni')">Segnalazioni</a>
+  </nav>
+
+  <main>
+    <div id="home " class="section active">
+      <h2>Benvenuto!</h2>
+      <p>Questa è l'app ufficiale degli studenti dell'Istituto Manzoni. Naviga tra le sezioni per scoprire tutte le funzionalità!</p>
+      <div class="grid">
+        <div class="card"><h3>Novità</h3><p>Leggi le ultime notizie scolastiche.</p></div>
+        <div class="card"><h3>Calendario</h3><p>Scopri le date importanti dell'anno.</p></div>
+        <div class="card"><h3>Orario</h3><p>Consulta l'orario aggiornato delle lezioni.</p></div>
+      </div>
+    </div>
+    
+  <style>
+  #chiSiamo {
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+
+  #chiSiamo h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #333;
+    font-size: 2.2em;
+  }
+
+  .rappresentante {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+
+  .rappresentante img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    border: 3px solid #4A90E2;
+  }
+
+  .rappresentante-info {
+    flex: 1;
+    color: #222;
+  }
+
+  .rappresentante-info strong {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .rappresentante-info .ruolo,
+  .rappresentante-info .classe,
+  .rappresentante-info .mail {
+    margin-bottom: 6px;
+    font-size: 1.1em;
+  }
+
+  .rappresentante-info .mail a {
+    color: #4A90E2;
+    text-decoration: none;
+  }
+
+  .rappresentante-info .mail a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div id="chiSiamo" class="section">
+  <h2>Chi Siamo - Rappresentanti d'istituto</h2>
+  
+  <div class="rappresentante">
+    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Foto Marco Rossi" />
+    <div class="rappresentante-info">
+      <strong>Marco Rossi</strong>
+      <div class="classe">Rappresentante di classe 3AI</div>
+      <div class="ruolo">Ruolo: Coordinatore</div>
+      <div class="mail">Email: <a href="mailto:marco.rossi@example.com">marco.rossi@example.com</a></div>
+    </div>
+  </div>
+
+  <div class="rappresentante">
+    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto Giulia Bianchi" />
+    <div class="rappresentante-info">
+      <strong>Giulia Bianchi</strong>
+      <div class="classe">Rappresentante di classe 4BI</div>
+      <div class="ruolo">Ruolo: Vice Coordinatore</div>
+      <div class="mail">Email: <a href="mailto:giulia.bianchi@example.com">giulia.bianchi@example.com</a></div>
+    </div>
+  </div>
+
+  <div class="rappresentante">
+    <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Foto Luca Verdi" />
+    <div class="rappresentante-info">
+      <strong>Luca Verdi</strong>
+      <div class="classe">Rappresentante di classe 3AI</div>
+      <div class="ruolo">Ruolo: Segretario</div>
+      <div class="mail">Email: <a href="mailto:luca.verdi@example.com">luca.verdi@example.com</a></div>
+    </div>
+  </div>
+</div>
+
+    <div id="calendario" class="section">
+      <h2>Calendario Scolastico</h2>
+      <div class="card"><strong>10 Settembre</strong>: Inizio lezioni</div>
+      <div class="card"><strong>8 Dicembre</strong>: Festività Immacolata</div>
+      <div class="card"><strong>23 Dicembre - 7 Gennaio</strong>: Vacanze natalizie</div>
+    </div>
+
+    <div id="notizie" class="section">
+      <h2>Ultime Notizie</h2>
+      <div class="card"><strong>1 Giugno</strong>: Assemblea d'istituto il 5 giugno.</div>
+      <div class="card"><strong>28 Maggio</strong>: Pubblicati i turni degli scrutini.</div>
+    </div>
+
+    <div id="orario" class="section">
+      <h2>Orario delle Lezioni</h2>
+      <p>Seleziona la tua classe:</p>
+      <select onchange="caricaOrario(this.value)">
+        <option value="">-- Seleziona --</option>
+        <option value="3AI">3AI</option>
+        <option value="4BI">4BI</option>
+      </select>
+      <div id="risultato-orario" class="card"></div>
+    </div>
+
+    <div id="materiali" class="section">
+      <h2>Materiali Scolastici</h2>
+      <div class="card"><a href="#">Dispense di Matematica (PDF)</a></div>
+      <div class="card"><a href="#">Appunti di Storia (PDF)</a></div>
+      <div class="card"><a href="#">Esercizi di Informatica (PDF)</a></div>
+    </div>
+
+    <div id="eventi" class="section">
+      <h2>Eventi e Attività</h2>
+      <div class="card"><strong>15 Giugno</strong>: Festa di fine anno.</div>
+      <div class="card"><strong>20 Giugno</strong>: Torneo sportivo studentesco.</div>
+    </div>
+
+ 
+
+    <div id="segnalazioni" class="section">
+      <h2>Segnalazioni Studenti</h2>
+      <form onsubmit="inviaSegnalazione(); return false;">
+        <input type="text" id="segnalatore" placeholder="Anonimo o Nome" required />
+        <textarea id="testoSegnalazione" placeholder="Scrivi qui la segnalazione" rows="4" required></textarea>
+        <button type="submit">Invia Segnalazione</button>
+      </form>
+      <p id="confermaSegnalazione" style="color: green; margin-top: 1rem;"></p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Istituto Manzoni - App creata dagli studenti | <a href="#" onclick="showSection('materiali')">Materiali</a>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function inviaSegnalazione() {
+      const segnalatore = document.getElementById('segnalatore').value || 'Anonimo';
+      const testo = document.getElementById('testoSegnalazione').value;
+
+      const destinatario = 'khemiri.1015831@manzoni.edu.it'; // Cambia con la mail corretta
+      const oggetto = encodeURIComponent('Segnalazione Studenti da ' + segnalatore);
+      const corpo = encodeURIComponent(testo);
+
+      const mailtoLink = `mailto:${destinatario}?subject=${oggetto}&body=${corpo}`;
+
+      window.location.href = mailtoLink;
+    }
+
+    function caricaOrario(classe) {
+      const output = document.getElementById('risultato-orario');
+      if (classe === "3AI") {
+        output.innerHTML = "<strong>3AI</strong><br>Lunedì: Matematica, TPS, Italiano...";
+      } else if (classe === "4BI") {
+        output.innerHTML = "<strong>4BI</strong><br>Lunedì: Inglese, Informatica, Storia...";
+      } else {
+        output.innerHTML = "";
+      }
+    }
+  </script>
+</body>
+</html>
