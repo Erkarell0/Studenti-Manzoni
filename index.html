@@ -501,8 +501,102 @@
 }
 
 
+.promessa-card {
+  width: 300px;
+  border-left: 6px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.promessa-intestazione {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-promise {
+  font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  background-color: #f4f4f4;
+  color: #222;
+}
+
+/* Colori per stato */
+.icon-promise.mantenuta {
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.icon-promise.in-elaborazione {
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.icon-promise.non-mantenuta {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.promessa-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.promessa-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
 
   
+  
+  
+  .video-card {
+  width: 340px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-card ul {
+  padding-left: 20px;
+  margin: 10px 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.video-wrapper-local {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+  background-color: #000; /* sfondo nero per i bordi */
+}
+
+.video-wrapper-local video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* <--- così non viene tagliato né zoomato */
+  border: none;
+  border-radius: 10px;
+}
 
 
   </style>
@@ -530,10 +624,50 @@
       <a href="#" onclick="showSection('calendario'); return false;">Calendario</a>
       <a href="#" onclick="showSection('notizie'); return false;">Notizie</a>
       <a href="#" onclick="showSection('proposte-voti'); return false;">Proposte e Voti</a>
+      <a href="#" onclick="showSection('promesse'); return false;">Promesse</a>
       <a href="#" onclick="showSection('documenti'); return false;">Documenti</a>
-      <a href="#" onclick="showSection('segnalazioni'); return false;">Segnalazioni</a>
+      <a href="#" onclick="showSection('segnalazioni'); return false;">Segnalazioni</a>    
     </div>
   </div>
+  
+  
+  
+  
+  <section class="section" id="promesse">
+  <h2 class="section-title">Le Nostre Promesse</h2>
+ <div class="cards-container">
+    
+    <!-- PROMESSA MANTENUTA -->
+    <div class="card promessa-card">
+      <div class="promessa-intestazione">
+        <span class="icon-promise mantenuta">✓</span>
+        <h3>Wi-Fi per tutti</h3>
+      </div>
+      <p>Abbiamo collaborato con la scuola per potenziare il segnale in aula.</p>
+    </div>
+
+    <!-- PROMESSA IN CORSO -->
+    <div class="card promessa-card">
+      <div class="promessa-intestazione">
+        <span class="icon-promise in-elaborazione">⌛</span>
+        <h3>Macchinette più sane</h3>
+      </div>
+      <p>In fase di dialogo con la dirigenza per introdurre snack salutari.</p>
+    </div>
+
+    <!-- PROMESSA NON MANTENUTA -->
+    <div class="card promessa-card">
+      <div class="promessa-intestazione">
+        <span class="icon-promise non-mantenuta">✗</span>
+        <h3>Uscita anticipata al venerdì</h3>
+      </div>
+      <p>Non approvata dal Consiglio di Istituto.</p>
+    </div>
+    
+  <div class="conteggio-promesse">
+    mantenute: <strong>1</strong> / In corso: <strong>1</strong> / Non riuscite: <strong>1</strong>
+  </div>
+</section>
   
   <section id="proposte-voti" class="section">
   <div class="container">
@@ -565,62 +699,21 @@
 </section>
 
   <main>
-      <div id="home" class="section active">
+      <div id="home" class="section active"> 
       <h2>Benvenuto!</h2>
       <p>Questa è l'app ufficiale degli studenti dell'Istituto Manzoni. Naviga tra le sezioni per scoprire tutte le funzionalità!</p>
       <div class="grid">
-        <a href="#comunicazioni" class="card-link">
-          <div class="card">
-            <h3>📢 Novità</h3>
-            <p>Leggi le ultime notizie scolastiche.</p>
-          </div>
-        </a>
-        <a href="#calendario" class="card-link">
-          <div class="card">
-            <h3>📅 Calendario</h3>
-            <p>Scopri le date importanti dell'anno.</p>
-          </div>
-        </a>
-        <a href="#proposte-voti" class="card-link">
-          <div class="card">
-            <h3>🗳️ Vota Ora</h3>
-            <p>Partecipa alle votazioni in corso.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div id="chiSiamo" class="section">
-      <h2>Chi Siamo - Rappresentanti d'istituto</h2>
-
-      <div class="rappresentante">
-        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Foto Marco Rossi" />
-        <div class="rappresentante-info">
-          <strong>Karem Khemiri</strong>
-          <div class="classe">Classe 3AI</div>
-          <div class="ruolo">Ruolo: Coordinatore</div>
-          <div class="mail">Email: <a href="mailto:khemiri.1015831@manzoni.edu.it">khemiri.1015831@manzoni.edu.it</a></div>
-        </div>
-      </div>
-
-      <div class="rappresentante">
-        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Foto Giulia Bianchi" />
-        <div class="rappresentante-info">
-          <strong>Mario Rossi</strong>
-          <div class="classe">Classe 3A </div>
-          <div class="ruolo">Ruolo: Vice Coordinatore</div>
-          <div class="mail">Email: <a href="mailto:giulia.bianchi@example.com">giulia.bianchi@example.com</a></div>
-        </div>
-      </div>
-
-      <div class="rappresentante">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="Foto Luca Verdi" />
-        <div class="rappresentante-info">
-          <strong>Luca Verdi</strong>
-          <div class="classe">Rappresentante di classe 3AI</div>
-          <div class="ruolo">Ruolo: Segretario</div>
-          <div class="mail">Email: <a href="mailto:luca.verdi@example.com">luca.verdi@example.com</a></div>
-        </div>
+<a href="#comunicazioni" class="card-link">
+    <div class="card"><h3>📢 Novità</h3><p>Leggi le ultime notizie scolastiche.</p></div>
+  </a>
+  <a href="#calendario" class="card-link">
+    <div class="card"><h3>📅 Calendario</h3><p>Scopri le date importanti dell'anno.</p></div>
+  </a>
+  <a href="#votazioni" class="card-link">
+    <div class="card"><h3>🗳️ Vota Ora</h3><p>Partecipa alle votazioni in corso.</p></div>
+  </a>
+  
+</div>
       </div>
     </div>
 
@@ -761,28 +854,7 @@
       <div class="card"><strong>29 Maggio</strong>: Verifica de negri.</div>
     </div>
 
-    <div id="orario" class="section">
-      <select onchange="caricaOrario(this.value)">
-  <option value="">Seleziona classe</option>
-  <!-- 1° e 2° anno: AI, BI, CI -->
-  <option value="1AI">1AI</option>
-  <option value="1BI">1BI</option>
-  <option value="1CI">1CI</option>
-  <option value="2AI">2AI</option>
-  <option value="2BI">2BI</option>
-  <option value="2CI">2CI</option>
-  <!-- Dal 3° anno solo AI e AM -->
-  <option value="3AI">3AI</option>
-  <option value="3AM">3AM</option>
-  <option value="4AI">4AI</option>
-  <option value="4AM">4AM</option>
-  <option value="5AI">5AI</option>
-  <option value="5AM">5AM</option>
-</select>
-
-<div id="risultato-orario"></div>
-    </div>
-
+    
     <div id="documenti" class="section">
       <h2>Documenti Ufficiali</h2>
       <div class="card"><a href="regolamento_scolastico.pdf" target="_blank" rel="noopener noreferrer">Regolamento Scolastico (PDF)</a></div>
@@ -820,6 +892,48 @@
   </div>
 </div>
 
+<section class="section" id="aggiungi-app">
+  <h2 class="section-title">Aggiungi l'App alla Home</h2>
+
+  <div class="cards-container">
+    
+    <!-- VIDEO iPhone -->
+    <div class="card video-card">
+      <h3>📱 iPhone / iOS</h3>
+      <p>Per aggiungere l'app alla schermata Home su iPhone:</p>
+      <ul>
+        <li>Apri il sito in Safari.</li>
+        <li>Tocca il pulsante <strong>Condividi</strong> (quadrato con freccia).</li>
+        <li>Seleziona <strong>"Aggiungi a Home"</strong>.</li>
+      </ul>
+      <div class="video-wrapper-local">
+        <video controls>
+          <source src="ios.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+      </div>
+    </div>
+
+    <!-- VIDEO Android -->
+    <div class="card video-card">
+      <h3>📱 Android</h3>
+      <p>Per aggiungere l'app alla schermata Home su Android:</p>
+      <ul>
+        <li>Apri il sito in Chrome.</li>
+        <li>Tocca il menu con i <strong>tre puntini</strong> in alto a destra.</li>
+        <li>Seleziona <strong>"Aggiungi a schermata Home"</strong>.</li>
+      </ul>
+      <div class="video-wrapper-local">
+        <video controls>
+          <source src="videos/aggiungi-android.mp4" type="video/mp4">
+          Il tuo browser non supporta il video.
+        </video>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
 
    <div id="segnalazioni" class="section">
@@ -832,9 +946,10 @@
       <p id="confermaSegnalazione" style="color: green; margin-top: 1rem;"></p>
     </div>
   </main>
+  
 
   <footer>
-    &copy; 2025 Istituto Manzoni - App creata dagli studenti | <a href="#" onclick="showSection('documenti')">Materiali</a>
+    &copy; 2025 Istituto Manzoni - App creata dagli studenti | <a href="#" onclick="showSection('aggiungi-app')">Aggiungi l'App alla Home</a>
   </footer> 
 <script>
 function showSection(id) {
